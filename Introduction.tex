@@ -1,0 +1,63 @@
+\chapter{Introduction}
+\thispagestyle{empty}
+The original purpose of our project was to develop a system for detecting suspicious Bangla texts using supervised machine learning. Digitization has changed the way we process and analyze information. There is an exponential increase in online availability of information. From web pages to emails, science journals, e-books, learning content, news and social media are all full of textual data. Text classification performs an essential role in various applications that deals with organizing, classifying, searching and concisely representing a significant amount of information.\par
+\vspace{.2cm}
+Our system classifies a piece of information into suspicious and non-suspicious category. This system can be used by counter terrorism agencies for analysis of information.
+
+\section{Text Classification}
+Text classification is the task of assigning a text into a set of predefined classes automatically. Because of the rapid growth of online information, text classification has become more challenging and more important as well. Text classification can be described into two categories.
+\subsection{Supervised Classification}
+In supervised classification of text classification categories are defined. It works on training and testing principle. During training phase, the machine learning algorithm works on the label data. The algorithm is trained on labeled data set and gives the desired output. During testing phase, unobserved data are fed into algorithm and classifier classifies them based on the knowledge of training phase.
+\subsection{Unsupervised Classification}
+In unsupervised classification of text classification categories are not defined. Here machine learning algorithm try to discover natural structure in data. The algorithm looks for similar patterns and structures in the data points and groups them into clusters. The classification of the data is done based on the clusters formed.\par
+One can also apply some other ways to classify text such as Custom Text Classification, Semi-Supervised Text Classification etc.
+
+\section{Motivation}
+With the amount of text files on internet increases exponentially each day, the volume of information available online continues to expand. A great number of researchers focused in the area of counter terrorism after the disastrous events of  9/11 trying to predict terrorist plans from suspicious communication.Because most of communications occur based on text, if we able to predict either a text is suspicious or not suspicious it will be very helpful for the law enforcement agencies to find the perpetrator and stop terrorist event.\par 
+\vspace{.3cm}
+As far we know, no system is developed for detecting suspicious Bangla text. It is very important for the safety of Bangladeshi People to develop a system   which can detect suspicious communications in Bangla. It is quite impossible for a human being to analyze millions of texts. So our goal is to develop a learned classifier which is able to classify a text as ‘Suspicious’ or ‘Not Suspicious’. This motivated us to work on this area.
+
+\section{Challenges}
+We have to face several challenges to implement this system. Some of this challenges are listed below, 
+
+\begin{itemize}
+    \item First challenge, for the implementation of this system the most challenging task was to develop a dataset which can be used by our learning algorithm. We know that for any machine learning algorithm a well-furnished dataset is a key. Bengali is a low resource language and there are no good quality corpora is available for research purpose. We try to overcome this problem by collecting a large amount of text from different Bengali source and social media. We collect about 4000 suspicious text and it takes us around six months to prepare this dataset.
+    
+    \item The second challenge was to label the collected data into suspicious and non-suspicious category. We use supervised machine learning algorithm so it was very important to label the texts correctly. If we use wrong data to train the classifier, then performance will decrease. Semantic feature is used to classify text properly. Semantic features represent the basic conceptual components of meaning for any lexical item. An individual semantic feature constitutes one component of a word’s intension, which is the inherent sense or concept evoked.
+    
+    \item Hardware support was another vital challenge for our system. For getting better accuracy we have to process huge amount of texts. We set up a high computation power hardware which able to process large amount of texts.
+\end{itemize}
+\clearpage
+
+\section{Applications of Text Classification}
+Classification is one of the essential parts of Text Analysis. Text classification or Text Categorization is the activity of labeling natural language texts with relevant categories from a predefined set. A lot of current and emerging applications of text classification are available in this era of commercial digitization. Some of the applications are,
+\begin{itemize}
+    \item Platforms such as E-commerce, news agencies, blogs, content curators, directories can use automated technologies to classify and tag content and products. Tagging content or products using categories as a way to improve browsing or to identify related contents on a website.
+    
+    \item Text classification can also be used to automate CRM (Customer Relationship Management) tasks. The text classifier is highly customizable and can be trained accordingly. The CRM tasks can directly be assigned and analyzed based on importance and relevance. It reduces manual work and thus is high time efficient.
+    
+    \item Text Classification of content on the website using tags helps to crawl website easily which ultimately helps in SEO. Additionally, automating the content tags on website and app can make user experience better and helps to standardize them. Text classification can be used to automate and speed up this process.
+    
+    \item Text classification can be used for analysis of sentiment. It is task of determining sentiment of a user based on the content of the text.
+    
+    \item Academia, law practitioners, social researchers, government, and non-profit organization can also make use of text classification technology. As these organizations deal with a lot of unstructured text, handling the data would be much easier if it is standardized by categories/tags.
+    
+    \item Email spam filtering is one of the most common application of text classification which classifies an email into spam and not spam category.
+\end{itemize}
+
+\section{Contributions of the Work}
+The primary focus of our project is to develop a system which can detect suspicious Bangla text using machine learning. The contributions are as follows,
+\begin{enumerate}
+    \item A system is designed that can detect suspicious Bangla text based on machine learning algorithm.
+    
+    \item A corpus is developed which contains approximately 4000 suspicious Bangla text collected from different online and offline resources.
+    
+    \item The proposed system is implemented to detect suspicious text.
+\end{enumerate}
+\clearpage
+
+\section{Organization of the Thesis}
+This report is organized into six chapters. Chapter one contains some introductory readings
+on text classification, some challenges of implementation of our work, motivation of our work, motivation of our work and the contributions we made. Chapter two contains brief discussion on previous works that is already implemented, their limitations and their role on text classification using machine learning. Chapter three describes proposed system with necessary diagrams. An overall system architecture is given on this chapter. In chapter four our implementation of the project in details have been illustrated. Chapter five focuses on the experimental results of the system. Evaluation measures and results of our system is described in this chapter. Chapter six consists of conclusion with the summary of our system and
+the future plan of our system
+\clearpage
