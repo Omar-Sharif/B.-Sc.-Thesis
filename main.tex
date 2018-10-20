@@ -37,94 +37,17 @@
 \listoftables
 \clearpage
 \pagenumbering{arabic}
-
+\onehalfspacing
 %%%%%% Chapter 1 Introduction %%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\onehalfspacing
 \input{Introduction.tex}
 
 %%%%%%%%%% Chapter 2 Literature Review %%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\chapter{Literature Review}
-\thispagestyle{empty}
-In this chapter we will shortly describe history of text classification and learn about different machine learning methods which are really useful for classifying text. This chapter also contains brief discussion on related previous works.
-
-\section{History of Text Classification}
-Text classification (or text categorization)  first emerged in the late 1990s as ``Text Data Mining" and has been actively investigated by many researchers. Text classification is a preprocessing technology which can be used to filter out irrelevant documents from a large-scale corpus. In early approaches a text source is treated as bag-of-words. The bag-of-words is a simple representation in which a sentence or a document is expressed by a set of words and it is used in natural language processing. But there was no ability to understand the semantics of a document in earlier approaches.\par
-\vspace{.5cm}
-After early ages, researchers try to find out hidden relationships and other complex pattern within data-sets. Techniques such as clustering, classification, decision trees and link analysis are used to find out these complex relational patterns. This techniques coupled with machine learning algorithms helps to find deeper linguistics that enable to understand the semantics of a document or a sentence. Text classification helps to allocate documents into predefined topics, such as economics, politics, news, sports etc. Due to the excessive increase in online textual information, e.g., email messages, online news, web pages, as well as a huge number of resources for scientific online abstracts such as MEDLINE, there is an ever-growing demand for text classification. It has now become one of the most attractive research topic. If a system can classify texts accurately we can use it to predict events which will happen in future from our present data. Such as from suspicious communication we may predict a terrorist event. It is an interesting question how to achieve high performance in the task of assigning multiple topics to documents in a targeted domain as the system has to process huge amount of data. If we can develop system with high information processing capacity there will be revolution because this an era of information.
-
-
-\section{Different Methods of Text Classification}
-Many works have already done in text categorization such as spam classification, research paper categorization, detecting suspicious profile using text classification etc.There are several well-known methods and algorithms are already exist for text classification problem such as Naïve Bayes Classifier[1], Support Vector Machine[2], Logistic regression[3], K-nearest neighbor algorithms (KNN)[4], Decision Trees[5] etc.
-
-\subsection{Naive Bayes Classifier}
-
-Naive Bayes is a probabilistic classifier commonly used in machine learning. The Bayesian classifiers are statistical and also possess learning ability. For processing large data-set multinomial model of Naive Bayes is used. By searching the dependencies among attributes the performance of Naive Bayes could be enhanced. It is mainly used in data preprocessing applications due to ease of computation. Bayesian reasoning and probability inference are employed in predicting the target class. Attributes are key in classification using probabilistic model. So weight values of attributes play an important role to improve the performance of the model. %Deep feature weighting solves the problem of conditional independence assumption, which is a major improvement of Naive Bayesian classifier and computes conditional probability accurately. But these feature weighting techniques come with some defects like, inadequate improvement to performance, compromised simplicity and increased execution time of models etc. 
-\par
-\vspace{0.5cm}
-The performance of Naive Bayes depends on the accuracy of the estimated conditional probability terms. When training data is scatter it is hard to estimate conditional probability terms accurately. Some meta learning methods are followed to estimate conditional probability terms. To improve this, various meta-learning techniques such as structure extension, attribute selection, frequency transforming, attribute weighting, instance weighting, and local learning are used. Naive Bayes classifier is applied to mark email as spam/ham, classify articles based on content,sentiment/emotion analysis.% In our project it can also be used classify texts into suspicious and non-suspicious category.
-The advantage of Naive Bayesian classifiers are these classifiers are simple and  powerful in terms of degree of certainty, optimization is less complicated and allows for dynamic adaption.These qualities  make them an easier option for handling natural language processing problems. \par
-\vspace{.5cm}
-The main limitation of Bayesian networks is that the time complexity increases when high dimensional text data is processed using these networks. Moreover, in Bayesian networks interaction between features can not be achieved and the probabilities calculated are not accurate but relative probability.
-
-\subsection{Support Vector Machine}
-The Support Vector Machine (SVM) algorithm is a supervised machine learning algorithm which is used for various classification problems.It can be applied in credit risk analysis, medical diagnosis, text categorization, and information extraction.SVM is suitable for high dimensional data because the complexity of the classifiers depends on the number
-of support vectors instead of data dimensions, they produce the same hyper plane for repeated training sets, and they have better generalization abilities. It separate classes by placing hyper plane between classes. It selects optimal hyper plane from which distance of classes are maximized. The performance of SVM does not decrease with sparsity of data. SVM is a really powerful tool for processing data and extracting information when dataset in huge.
-\par 
-\vspace{0.5cm}
-The performance of SVM can be enhanced using customized kernels. One such customized kernel is Class Meaning Kernel that is used to smooth terms of documents using class based meaning values of terms. SVM has some salient features for which it has been considered as state of art in the classification tasks. SVM has been used for text classification, hand written digit detection and many other classification tasks. Some of its unique features are: it can work well in a very high dimensional feature space, it uses only a subset of original training set to make decision boundary called support vectors and it is also suitable for non linearly separable data (it uses kernel trick). In SVM we can select maximum features length for our model during learning. In our SVM learning model we took most frequent 1000 features using the parameter max-features.  
-\par 
-\vspace{0.5cm}
-The limitation of Support Vector Machine is it still lags in handling unlabeled data. It has to be verified that data is thoroughly preprocessed to increase the performance of classifiers. In addition, selecting the best kernel among available kernels to train data is time consuming. Training and testing using SVM model is time consuming. As SVM is non parametric model it could not summarize data based on underlying parameters. 
-\clearpage
-
-\subsection{Logistic Regression}
-Logistic regression is a technique borrowed by machine learning from the field of statistics. It is the go-to method for binary classification problems (problems with two class values). Logistic Regression is named after the core method used in it logistic function. The learning of logistic regression depends of maximum likelihood estimation. Maximum-likelihood estimation is a common learning method used by a variety of machine learning algorithms, although it does make assumptions about the distribution of your data.The best coefficients would result in a model that would predict a value very close to 1 for the default class and a value very close to 0 for the other class. The intuition for maximum-likelihood for logistic regression is that a search procedure seeks values for the coefficients that minimize the error in the probabilities predicted by the model to those in the data.
-\par
-\vspace{0.5cm}
-The performance of logistic regression depends on cost function. If we can reduce the value of cost function then the model will perform better. At the time of fitting the parameters to the model we must careful about over-fitting or under-fitting characterstics of the model. If the model overfits it will perform well on training set but performs poorly on test set. Regularization techniques often used to prevent over-fitting. Logistic regression model can be used in Financial forecasting, Software cost prediction, software effort prediction, Software quality assurance, Crime data mining etc. 
-\par
-\vspace{0.5cm}
-The main drawback of Logistic Regression is that it could not separate non-linearly separable classes. In addition to ensure better accuracy with Logistic Regression large sample space is required.
-
-\subsection{K-Nearest Neighbor}
-K-Nearest Neighbor (k-NN) is commonly called instance-based learning because it works on the principle of closest training samples, those data points that are close to each other belong to one particular class. We can simply implement a system with K-NN with much flexibility in feature selection. K-Nearest Neighbor algorithm performs well on problems with multiple class. It can also be used in pattern recognition. K-NN is an non parametric lazy learning algorithm. That is a pretty concise statement. When a technique is non parametric , it means that it does not make any assumptions on the underlying data distribution. The decision boundaries of k-NN have a complex shape.
-\par
-\vspace{0.5cm}
- Though K-Nearest Neighbor is robust for noisy data, deciding the value of k is quite complicated. Computational complexity increases with increase in dimensionality of data.Tree based K-NN can be used to reduce the cost of computing k value.
- 
- \subsection{Decision Trees}
- Decision trees are highly comprehensible models when compared to neural nets.
- In Decision Tree classification a problem is solved by using tree representation. Decision Tree work in a sequence, to test a decision against a particular threshold value among the available values. Each internal node of the tree corresponds to an attribute, and each leaf node corresponds to a class label.The top nodes of the tree are the most important because they determine the subsequent decisions to be made. The tree also shows the order decisions must be made and eliminates ambiguity related to how each item affects the others.
-\par
-\vspace{0.5cm}
-Performance of trees is directly proportional to the effectiveness of the construction. Optimization of decision tree is a challenging task for large amount of data. For processing high dimensional data clustering of data can be used.
-A decision tree model is formed using a hierarchy of branches. Each path from the root node through internal nodes to a leaf node represents a classification decision rule.
-\par
-\vspace{0.5cm}
-Though, Decision Trees work well for data with few highly relevant attributes, the computational complexity increases with increased complexity among relationships. Moreover Decision Trees have always been a problem with high dimensional data. It is difficult understand the background details that led to particular decision in the tree. 
-
-\par
-\vspace{0.7cm}
-\noindent
-\textbf{From the above discussion,} we can conclude that all the methods has limitation for some certain constraints. The complexity of Naive Bayes increased with high dimensional data, SVM requires large training and test data, Logistic Regression unable to separate non-linearly separable classes, selecting the value of K is difficult in KNN algorithm and Decision tree can not handle large amount of data. We will apply this methods in our system and observe their performance in our data.
-
-\section{Related Work}
-
-A number of significant researches have already done in text categorization in English and other language. But research on Bangla text classification is in preliminary stage still now. However some mentionable works have been done for Bangla Language Processing.
-\par
-\vspace{0.5cm}
- Md. Rajib Hossain et al. describes Bengali document categorization based on word embedding and statistical learning approaches[10]. It categorizes document into nine predefined categories with mentionable accuracy.\par 
- A system for Arabic text categorization is developed using Naive Bayes in control environment dataset with good accuracy[15]. Krendzelak et al. describes a text categorization system with machine learning and hierarchical structure which used tree based Naive Bayesian categorization process[11,12]. It performs with low accuracy due to training techniques and training feature extraction process.\par
- S. Alami et al. describes about different techniques to detect suspicious profiles using text analysis within social media[9]. A system for detecting suspicious email using enhanced feature selection is proposed but it has low accuracy because of not having enough dataset[7].
- \par 
- In the recent year researchers are trying to use machine learning techniques broadly for text classification. SVM [2] is a discriminative supervised machine learning technique of classification. Text Categorization of Turkish language using SVM is proposed which achieved better accuracy but due to large feature dimensions time complexity is large[14]. Clustering based approach [10,8] better result but as discussed earlier in section 2.2.4 problems exists with clustering based solution. In cluster based techniques, number of clusters determine the accuracy but unfortunately no significant work is conducted to determine size of optimal clusters. Data outlier is a problem of cluster based solution, a cluster center may change due to outliers which causes our final train model to be over-fitted. Logistic Regression [4] is a binary classification model that predicts a binary outcome based on some features. \par 
- In our work, we propose a system which can classify Bangla texts into suspicious and not suspicious category. No significant system is not yet developed for detecting/classifying suspicious Bangla text. Our system is trained with different machine learning algorithms and overall accuracy of this algorithms is measured over our dataset.        
- 
-
-
+\input{LiteratureReview.tex}
+    
+%%%%%%%%% Chapter 3 System Architecture %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
