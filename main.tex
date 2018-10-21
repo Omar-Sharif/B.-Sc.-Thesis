@@ -106,7 +106,7 @@ All of this software are not required at a time. To implement different part of 
 \section{Implementation Details}
 We implement the system at different steps from training to testing. These steps are,
 \subsection{Training Corpus}
-Training corpus is key to suspicious text detection system. No pre-build corpus is available for suspicious Bangla text. We build the corpus and it takes six months to collect data form different offline sources. Our training corpus is divided into two folder one is for suspicious and another is for non suspicious. \textbf{Fig.}\ref{fig:CAP} categorical folder of our system.
+Training corpus is key to suspicious text detection system. No pre-build corpus is available for suspicious Bangla text. We build the corpus and it takes six months to collect data form different online and offline sources. Our training corpus is divided into two folder one is for suspicious and another is for non suspicious text. \textbf{Fig.} \ref{fig:CAP} shows categorical folder of our system.
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=0.6]{Figures/categorical_fld.PNG}
@@ -122,9 +122,11 @@ Training corpus is key to suspicious text detection system. No pre-build corpus 
     \caption{Sample Training Texts}
     \label{fig:SMT}
 \end{figure}
+
 \subsection{Stopword List}
-In our system the words which has no contribution to classify text is referred as stopwords. From our training text such stopwords were removed. 635 stopwords were collected, from which a list of stopword was built. Removal of this unnecessary words helps to increase efficiency of our system.
-\textbf{Fig.}\ref{fig:stpw} shows a list of some stopword.
+\textbf{Fig.} \ref{fig:stpw} shows a list of some stopword.
+In our system the words which has no contribution to classify text is referred as stopwords. From our training text such stopwords were removed. 635 stopwords were collected, from which a list of stopword was built. Removal of this unnecessary words help to increase efficiency of our system.
+
 
 \begin{figure}[h!]
     \centering
@@ -134,7 +136,7 @@ In our system the words which has no contribution to classify text is referred a
 \end{figure}
 \par\noindent
 
-\textbf{Fig.}\ref{fig:lstpw} shows the list of stopwords after loading them into our system environment.
+\textbf{Fig.} \ref{fig:lstpw} shows the list of stopwords after loading them into our system environment.
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=0.6]{Figures/lstp_wrd.PNG}
@@ -148,7 +150,7 @@ Processed corpus is the list of all processed text from which we are ready to ex
     \item Punctuation and stopword removal.
     \item Append back remaining words in the text.
 \end{itemize}
-\textbf{Fig.}\ref{fig:tkn} shows tokenization of a text.
+\textbf{Fig.} \ref{fig:tkn} shows tokenization of a text.
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=0.6]{Figures/tokenize.PNG}
@@ -156,12 +158,46 @@ Processed corpus is the list of all processed text from which we are ready to ex
     \label{fig:tkn}
 \end{figure}
 \par\noindent
-\textbf{Fig.}\ref{fig:crps} shows text corpus in our system environment.
+\textbf{Fig.} \ref{fig:crps} shows text corpus in our system environment.
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=0.6]{Figures/corpus.PNG}
     \caption{Corpus in System Environment}
     \label{fig:crps}
+\end{figure}
+
+\subsection{Corpus Feature}
+\textbf{Fig.} \ref{fig:feature} shows a part of our training set feature space.
+After processing the texts our next step is to extract feature from the processed text corpus. Feature extraction is an important step because our classifier will learn from the features we extract from texts. More feature will help our classifier model to classify texts more accurately.
+
+\par\noindent
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.9]{Figures/feature.PNG}
+    \caption{Feature Space of Training Set}
+    \label{fig:feature}
+\end{figure}
+\par\noindent
+Our feature space is a two dimensional array where rows represents each text of the corpus and columns represents number of unique words available in the corpus. Each cell of the array represents the number of time a specific word occurs in a specific text. 
+%\clearpage
+\subsection{Labeling of Text}
+\textbf{Fig.} \ref{fig:lbt} shows the labeling of texts.
+In our system each of the text is labeled with either $0$ or $1$. If the texts are not labeled then the system will not be able to process it. Here $0$ represents suspicious text and $1$ represents non suspicious text. 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.55]{Figures/label_of_text.PNG}
+    \caption{Labeling of Texts}
+    \label{fig:lbt}
+\end{figure}
+%\clearpage
+\subsection{Prediction of Classifier}
+\textbf{Fig.} \ref{fig:prd} shows prediction for a test set.
+Our classifier predicts from its learning ability. Each cell of the prediction array represent a prediction for a text. If prediction is $0$ then the text is suspicious otherwise the text is non suspicious.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.55]{Figures/prediction.PNG}
+    \caption{Prediction Array}
+    \label{fig:prd}
 \end{figure}
 
 \end{document}
