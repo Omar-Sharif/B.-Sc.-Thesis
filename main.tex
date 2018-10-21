@@ -144,7 +144,10 @@ Naive Bayes is a simple technique for constructing classifiers using feature val
 
 %%% Citation ache %%%%%%
 As a popular classification algorithm, Naive Bayes algorithm [4] will be used in our system. It can be defined as Bayes theorem with a conditional independency assumption that all variables $A_{1},A_{2},...,A_{n}$ in a given category $C$ are conditionally independent with each other given $C$. 
-According to Bayes rule for a text document $(T)$ and class $(C)$ we can write,$$ P(C|T) = \frac{P(T|C)P(C)}{P(T)}$$
+According to Bayes rule for a text document $(T)$ and class $(C)$ we can write,
+\begin{equation}
+    P(C|T) = \frac{P(T|C)P(C)}{P(T)}
+\end{equation}
 The class we are looking for to assign this document is out of all classes the one that maximizes the probability of that class given the document.
 \begin{equation}\label{eq:11}
  \begin{aligned}
@@ -207,7 +210,9 @@ Logistic Regression is a binary classification model that predicts a binary outc
     \label{fig:logistic_regression}
 \end{figure}
 For Logistic Regression the definition of logistic function or hypothesis function is,
-$$h_{\theta}(x) =  \frac{1}{1+\exp({-\theta^T x})}$$
+\begin{equation}
+    h_{\theta}(x) =  \frac{1}{1+\exp({-\theta^T x})}
+\end{equation}
 we can not use the cost function of Linear regression because if we that cost function the decision boundary will be non convex. Now cost function for Logistic regression is,
 \begin{equation}
     J(\theta) = \frac{1}{m}\sum_{i-1}^{m}cost(h_{\theta}(x^{i}),y^{i})   
@@ -244,11 +249,75 @@ The k-nearest neighbors algorithm (k-NN) is a non-parametric method used for cla
 
 \begin{enumerate}
     \item Euclidean distance function :
-    $$\sqrt{\sum_{i=1}^{k}}(x_i-y_i)^2$$
+    \begin{equation}
+        \sqrt{\sum_{i=1}^{k}(x_i-y_i)^2}
+    \end{equation}
     \item Manhattan distance function :
-    $$\sum_{i=1}^{k}\abs{(x_i-y_i)}$$
+    \begin{equation}
+         \sum_{i=1}^{k}\abs{(x_i-y_i)}
+    \end{equation}
+    \item Minkowski distance function :
+    \begin{equation}
+        ({\sum_{i=1}^{k}(\abs{x_i-y_i})^q)})^\frac{1}{q}
+    \end{equation}
+    
 \end{enumerate}
+\par\noindent
+All three distance measures are only valid for continuous variables. In the instance of categorical variables the Hamming distance must be used. It also brings up the issue of standardization of the numerical variables between 0 and 1 when there is a mixture of numerical and categorical variables in the dataset. Hamming distance for k-nearest neighbor can be calculated as follows,
+\begin{equation}
+    D_H = \sum_{i=1}^{k}\abs{(x_i-y_i)}
+\end{equation}
+$$ D = 0 \texttt{ if } x = y $$
+$$ D = 1 \texttt{ if } x\neq y $$
+\par\noindent
+Choosing the optimal value for K is best done by first inspecting the data. In general, a large K value is more precise as it reduces the overall noise but there is no guarantee.  Cross-validation is another way to retrospectively determine a good K value by using an independent dataset to validate the K value. Historically, the optimal K for most datasets has been between 3-10. That produces much better results than 1NN.
+\clearpage
 
+\subsection{Intuition of Decision Tree}
+Decision tree learning is a method commonly used in machine learning. In a Decision tree each interior node  corresponds to one of the input variables; there are edges to children for each of the possible values of that input variable. Each leaf represents a value of the target variable given the values of the input variables represented by the path from the root to the leaf. \textbf{Fig.} \ref{fig:DCT} shows a simple decision tree used for classification.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.4]{Figures/decision_tree.jpg}
+    \caption{Decision Tree}
+    \label{fig:DCT}
+\end{figure}
+
+A decision tree is built top-down from a root node and involves partitioning the data into subsets that contain instances with similar values. Entropy is used to calculate the homogeneity of a sample. To build a decision tree, we need to calculate two types of entropy using as follows,
+\begin{enumerate}
+    \item Entropy using one attribute :
+    \begin{equation}
+         E(S) = \sum_{i=1}^{c}-P_i \log_2P_i
+    \end{equation}
+    \item Entropy using two attributes :
+    \begin{equation}
+        E(S) = \sum_{c\epsilon X}{}P(C)E(C) 
+    \end{equation}
+    
+\end{enumerate}
+\par\noindent
+In this section, we gain simple intuition about some classification algorithm that will be used in our model. 
+
+
+\section{Text Classification Example}
+Our whole system is divided into two phases, one is training phase and another is testing phase.
+\subsection{Training Phase}
+\textbf{Fig.} \ref{fig:TP} summarizes our whole training process. A sample text is processed by using tokenization process. Then feature is extracted from the text and used to learn our classifier model.
+\vspace{1cm}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=15cm,height=14cm]{Figures/training_phase.PNG}
+    \caption{Training Process}
+    \label{fig:TP}
+\end{figure}
+\clearpage
+\subsection{Testing Phase}
+Whole testing process can be summarized by \textbf{Fig.} \ref{fig:TEP}. Sample texts are taken to test the system. After processing using feature extraction method feature is extracted and this features are used to classify text as suspicious and non-suspicious.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=15cm,height=14cm]{Figures/testing_phase.PNG}
+    \caption{Testing Process}
+    \label{fig:TEP}
+\end{figure}
 
 \end{document}
 
