@@ -1,6 +1,6 @@
 \chapter{Proposed Methodology}
+\thispagestyle{empty}
 In this chapter we will discuss about our proposed methodology and learn about every module of our system. We will find short mathematical insight of each learning algorithm used in our system. Finally overall system is summarized with an example.
-
 \section{Proposed Text Classification System}
 The key objective of our project is to design a system that can classify suspicious and non-suspicious text. \textbf{Fig} \ref{fig:proposed_model} shows an abstract view of our system.
 \vspace{0.5cm}
@@ -78,7 +78,7 @@ So, Final weighting scheme of $tf-idf$ is,
 \section{Classification Algorithm}
 After extracting feature from the text, now these features are used to train our machine learning model. Different classification algorithms have been used for training purpose.
 
-\subsection{Naive Bayes Classifier}
+\subsection{Intuition of Naive Bayes Classifier}
 Naive Bayes is a simple technique for constructing classifiers using feature values. All naive Bayes classifiers assume that the value of a particular feature is independent of the value of any other feature, given the class variable. \textbf{Fig} \ref{fig:NBC} shows decision boundary for Naive Bayes classifier.
 
 \begin{figure}[h!]
@@ -102,3 +102,45 @@ So final equation for Naive Bayes Classifier is,
 \begin{equation}
      C_{MAP} = argmax P(X_{1},X_{2},...,X_{n}|C)P(C)
 \end{equation}
+
+\subsection{Intuition of Support Vector Machine}
+Support vector machines are supervised learning models with associated learning algorithms that analyze data used for classification and regression analysis.  A support vector machine constructs a hyperplane or set of hyperplanes in a high- or infinite-dimensional space, which can be used for classification, regression, or other tasks like outliers detection. A good separation is achieved by the hyperplane that has the largest distance to the nearest training-data point of any class. \textbf{Fig} \ref{fig:SVM} shows decision boundary for linear SVM.
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.4]{Figures/svm.png}
+    \caption{Support Vector Machine}
+    \label{fig:SVM}
+\end{figure}
+
+SVM can perform linear classification as well as non-linear classification using kernel trick. For linear classification cost function can be written as,
+\begin{equation}
+    \label{cost_function_svm}
+    \frac{1}{n}\sum_{i=1}^{n}\max{(0,1-y_{i}(w.x_{i}-b))} + \lambda (\lVert \mathbf{w} \rVert)^2
+\end{equation}
+
+The parameter $\lambda $ in equation 3.11 determines the trade-off between increasing the margin-size and ensuring that the samples lie on the correct side of the margin.Thus, for sufficiently small values of $\lambda $, the second term in the loss function will become negligible, hence, it will behave similar to the hard-margin SVM, if the input data are linearly classifiable, but will still learn if a classification rule is viable or not.
+\par\noindent
+For non-linear classification with SVM kernel trick is used. Some common kernel tricks used in machine learning are,
+\begin{itemize}
+    \item Gaussian radial basis function:
+    \begin{equation}
+         k(x_{i}, x_{j}) = \exp{(-\gamma(\lVert \mathbf{x_{i}-x_{j}} \rVert)^2)}
+    \end{equation}
+    \item Polynomial Kernel (homogeneous):
+    \begin{equation}
+        k(x_{i}, x_{j}) = (x_{i}\cdot x_{j})^d
+    \end{equation}
+     \item Polynomial Kernel (inhomogeneous):
+     \begin{equation}
+         k(x_{i}, x_{j}) = (x_{i}\cdot x_{j}+1)^d
+     \end{equation}
+    \item Hyperbolic tangent:
+    \begin{equation}
+       k(x_{i}, x_{j}) = tanh(kx_{i}\cdot x_{j}+c) 
+    \end{equation}
+\end{itemize}
+Above equations expresses the kernel trick which are really important for classification and regression analysis.
+
+\subsection{Intuition of Logistic Regression}
