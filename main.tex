@@ -58,6 +58,25 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{Implementation.tex}
 
+%%%%%%%%%% Chapter 5 Experimentation %%%%%%%%%%%%%%
+\chapter{Experimentation}
+\thispagestyle{empty}
+In this chapter we will discuss about our dataset preparation process. We will learn about different evaluation measures. Finally by using this evaluation matrices we will evaluate the result of our system.
+
+\section{Dataset}
+Behind the success of any machine learning algorithm dataset is the key. Unfortunately, when we start this project there were no dataset available which can be used in our system. It was a very challenging task for us to build a corpus which contains a large amount of suspicious text. It took us approximately  six month to a build a well furnished  suspicious text corpus containing 4000 suspicious text. We collect non suspicious data from a pre-build corpus[16], thanks to them. At the time of collecting data we were very careful because as a machine leaning model our system learn form what we give to it. If we give wrong data then final output we will not be accurate. \par \vspace{0.5cm}\noindent 
+We mark a text as suspicious if it satisfies any one of the following criteria.
+
+\begin{itemize}
+    \item Texts contain words which hurts our religious              feelings.
+    \item Texts which instigate people against government.
+    \item Texts which instigate people against law enforcement        agencies.
+    \item Texts which instigate a community without any reason.
+    \item Texts which instigate our political parties. 
+    
+\end{itemize}
+As dataset is collected manually it may have some inconsistency.
+
 \end{document}
 
  
