@@ -208,7 +208,7 @@ Table 5.3 represents Accuracy and Error rate of different classification algorit
 \hline 
     SVM (RBF Kernel) & 0.90 & 0.10\\
 \hline 
-    Logistic Regression & 0.92 & 0.8\\
+    Logistic Regression & 0.92 & 0.08\\
 \hline
     K-Nearest Neighbor & 0.73 & 0.27\\
 \hline
@@ -247,7 +247,7 @@ Table 5.4 shows the precision, recall and $F_1$ score of different classificatio
 \end{center}
 \end{table}
 \noindent
-For all of the algorithms we use similar number of test documents. Logistic performs well than other algorithm.
+For all of the algorithms we use similar number of test documents. Logistic Regression performs well than other algorithm.
 \par
 \vspace{0.5cm}
 \noindent
@@ -259,12 +259,14 @@ Table 5.4 shows comparison among six algorithms algorithms that were used in our
 Now, we will learn about classification report, Precision Recall curve and Receiver operating characteristic's (ROC) curve of  all of this algorithms. Classification report gives us precision, recall and $F_1$ score of each category which is really helpful to analyze the algorithm. From classification report we can see what category our model can can more accurately and what should we do to increase the accuracy of the system. Precision Recall curve and ROC curve shows the graphical evaluation of algorithms. Precision Recall curve shows value of precision and recall at different threshold values. ROC curve shows relation between true positive rate and false positive rate. 
 \clearpage
 
+%%%%%%%%% Naive Bayes Classifier %%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Result of Naive Bayes Classifier}
 Table 5.5 shows the classification report for Naive Bayes classifier. Here support expose the total number of document test by the system.
 
 \begin{table}[h!]
 \begin{center}
-\caption{Classification Report}
+\caption{Classification Report (Naive Bayes)}
 \begin{tabular}{|m{4.4cm} | m{2cm}| m{2cm}| m{2cm}| m{2cm}|}
 \hline
      & Precision & Recall & $F_1$ score & Support \\
@@ -273,11 +275,12 @@ Table 5.5 shows the classification report for Naive Bayes classifier. Here suppo
 \hline 
      Non suspicious  & 0.76 & 1.00 & 0.87 & 84\\
 \hline 
-     avg/total & 0.89 & 0.85 & 0.85 & 173\\
+     avg./total & 0.89 & 0.85 & 0.85 & 173\\
 \hline
 \end{tabular}
 \end{center}
 \end{table}
+
 \noindent
 \textbf{Fig.} \ref{fig:prn} shows precision recall curve for Naive Bayes classifier.
 
@@ -287,6 +290,7 @@ Table 5.5 shows the classification report for Naive Bayes classifier. Here suppo
     \caption{Precision Recall Curve (Naive Bayes)}
     \label{fig:prn}
 \end{figure}
+
 \noindent
 \textbf{Fig.} \ref{fig:rocn} shows ROC curve for Naive Bayes classifier.
 
@@ -296,6 +300,223 @@ Table 5.5 shows the classification report for Naive Bayes classifier. Here suppo
     \caption{ROC Curve (Naive Bayes)}
     \label{fig:rocn}
 \end{figure}
+
+%%%%%%%%% SVM Linear kernel%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Result of SVM (Linear Kernel)}
+Table 5.6 shows the classification report for Support Vector Machine with linear kernel.
+
+\begin{table}[h!]
+\begin{center}
+\caption{Classification Report (SVM Linear Kernel)}
+\begin{tabular}{|m{4.4cm} | m{2cm}| m{2cm}| m{2cm}| m{2cm}|}
+\hline
+     & Precision & Recall & $F_1$ score & Support \\
+\hline
+     Suspicious & 0.91 & 1.00 & 0.91 & 89\\
+\hline 
+     Non suspicious  & 1.00 & 0.90 & 0.91 & 84\\
+\hline 
+     avg./total & 0.91 & 0.91 & 0.91 & 173\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\noindent
+\textbf{Fig.} \ref{fig:prsl} shows precision recall curve for SVM (Linear Kernel).
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.58]{Figures/PRSL.jpg}
+    \caption{Precision Recall Curve (SVM Liner Kernel)}
+    \label{fig:prsl}
+\end{figure}
+
+\noindent
+\textbf{Fig.} \ref{fig:rocsl} shows ROC curve for SVM (Linear Kernel).
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.58]{Figures/ROCSL.jpg}
+    \caption{ROC Curve (SVM Linear Kernel)}
+    \label{fig:rocsl}
+\end{figure}
+
+%%%%%%%%% SVM RBF kernel%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Result of SVM (RBF Kernel)}
+Table 5.7 shows the classification report for Support Vector Machine with RBF or Gaussian kernel.
+
+\begin{table}[h!]
+\begin{center}
+\caption{Classification Report (SVM RBF Kernel)}
+\begin{tabular}{|m{4.4cm} | m{2cm}| m{2cm}| m{2cm}| m{2cm}|}
+\hline
+     & Precision & Recall & $F_1$ score & Support \\
+\hline
+     Suspicious & 0.90 & 0.99 & 0.90 & 89\\
+\hline 
+     Non suspicious  & 0.99 & 0.89 & 0.91 & 84\\
+\hline 
+     avg./total & 0.90 & 0.91 & 0.90 & 173\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\noindent
+\textbf{Fig.} \ref{fig:prsk} shows precision recall curve for SVM (RBF Kernel).
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.58]{Figures/PRSK.jpg}
+    \caption{Precision Recall Curve (SVM RBF Kernel)}
+    \label{fig:prsk}
+\end{figure}
+
+\noindent
+\textbf{Fig.} \ref{fig:rocsk} shows ROC curve for SVM (RBF Kernel).
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.58]{Figures/ROCSK.jpg}
+    \caption{ROC Curve (SVM RBF Kernel)}
+    \label{fig:rocsk}
+\end{figure}
+
+%%%%%%% Logistic Regression %%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Result of Logistic Regression}
+Table 5.8 shows the classification report for Logistic Regression.
+
+\begin{table}[h!]
+\begin{center}
+\caption{Classification Report (Logistic Regression)}
+\begin{tabular}{|m{4.4cm} | m{2cm}| m{2cm}| m{2cm}| m{2cm}|}
+\hline
+     & Precision & Recall & $F_1$ score & Support \\
+\hline
+     Suspicious & 0.92 & 1.00 & 0.93 & 89\\
+\hline 
+     Non suspicious  & 1.00 & 0.93 & 0.93 & 84\\
+\hline 
+     avg./total & 0.91 & 0.93 & 0.93 & 173\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\noindent
+\textbf{Fig.} \ref{fig:prl} shows precision recall curve for Logistic Regression.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.58]{Figures/PRL.jpg}
+    \caption{Precision Recall Curve (Logistic Regression)}
+    \label{fig:prl}
+\end{figure}
+
+\noindent
+\textbf{Fig.} \ref{fig:rocl} shows ROC curve for Logistic Regression.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.58]{Figures/ROCL.jpg}
+    \caption{ROC Curve (Logistic Regression)}
+    \label{fig:rocl}
+\end{figure}
+
+%%%%%%%% K-Nearest Neighbor %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Result of K-Nearest Neighbor}
+Table 5.9 shows the classification report for K-Nearest Neighbor.
+
+\begin{table}[h!]
+\begin{center}
+\caption{Classification Report (K-Nearest Neighbor)}
+\begin{tabular}{|m{4.4cm} | m{2cm}| m{2cm}| m{2cm}| m{2cm}|}
+\hline
+     & Precision & Recall & $F_1$ score & Support \\
+\hline
+     Suspicious & 0.65 & 1.00 & 0.79 & 89\\
+\hline 
+     Non suspicious  & 1.00 & 0.44 & 0.61 & 84\\
+\hline 
+     avg./total & 0.82 & 0.73 & 0.70 & 173\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\noindent
+\textbf{Fig.} \ref{fig:prknn} shows precision recall curve for K-Nearest Neighbor.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.58]{Figures/PRKNN.jpg}
+    \caption{Precision Recall Curve (K-Nearest Neighbor)}
+    \label{fig:prknn}
+\end{figure}
+
+\noindent
+\textbf{Fig.} \ref{fig:rocknn} shows ROC curve for K-Nearest Neighbor.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.58]{Figures/ROCKNN.jpg}
+    \caption{ROC Curve (K-Nearest Neighbor)}
+    \label{fig:rocknn}
+\end{figure}
+
+%%%%%%%%%%%% Decision Tree %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Result of Decision Tree}
+Table 5.10 shows the classification report for Decision Tree.
+
+\begin{table}[h!]
+\begin{center}
+\caption{Classification Report (Decision Tree)}
+\begin{tabular}{|m{4.4cm} | m{2cm}| m{2cm}| m{2cm}| m{2cm}|}
+\hline
+     & Precision & Recall & $F_1$ score & Support \\
+\hline
+     Suspicious & 0.91 & 0.89 & 0.90 & 89\\
+\hline 
+     Non suspicious  & 0.88 & 0.90 & 0.89 & 84\\
+\hline 
+     avg./total & 0.90 & 0.90 & 0.90 & 173\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\noindent
+\textbf{Fig.} \ref{fig:prdct} shows precision recall curve for Decision Tree.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.58]{Figures/PRDCT.jpg}
+    \caption{Precision Recall Curve (Decision Tree)}
+    \label{fig:prdct}
+\end{figure}
+
+\noindent
+\textbf{Fig.} \ref{fig:rocdct} shows ROC curve for Decision Tree.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.58]{Figures/ROCDCT.jpg}
+    \caption{ROC Curve (Decision Tree)}
+    \label{fig:rocdct}
+\end{figure}
+
+\section{Discussion}
+
 
 \end{document}
 
