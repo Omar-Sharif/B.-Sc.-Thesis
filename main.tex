@@ -1,5 +1,6 @@
 \documentclass[12pt,a4paper]{report}
 \usepackage[left=1.57in,top=1.18in,bottom=1in,right=1in]{geometry}
+\usepackage[bibstyle=ieee, citestyle=numeric-comp]{biblatex}
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{listings}
@@ -17,9 +18,10 @@
 \usepackage[toc,page]{appendix}
 \usepackage{setspace}
 \usepackage{biblatex}
+\addbibresource{ref.bib}
 \singlespacing
 \captionsetup[figure]{labelfont={bf},labelformat={default},labelsep=period,name={Fig.}}
-
+\addbibresource{ref.bib}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
@@ -67,6 +69,9 @@
 %%%%%%%%%% Chapter 6 Conclusion %%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{Chapter6.tex}
+
+\printbibliography
+
 
 
 \end{document}
